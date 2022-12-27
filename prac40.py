@@ -1,16 +1,9 @@
-class ZeroDenominatorError(ZeroDivisionError):
-    pass
+def fib(n):
+    if n == 1:
+        return 0
+    if n == 2:
+        return 1
+    return fib(n - 1) + fib(n - 2)
 
 
-try:
-    a = 10
-    b = 0
-    if b == 0:
-        raise ZeroDenominatorError()
-    c = a / b
-except ZeroDivisionError:
-    print('Zero Division Error occured', end=' ')
-except ZeroDenominatorError:
-    print('Zero Denominator Error occured', end=' ')
-else:
-    print('else works')
+print(fib(int(input())))
